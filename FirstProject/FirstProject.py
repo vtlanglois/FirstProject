@@ -12,11 +12,28 @@ class State(pc.State):
 
     pass
 
+def navbar():
+    return pc.box(
+        pc.hstack(
+            pc.heading("Header"),
+            justify="space-between",
+            border_bottom="0.2em solid #F0F0F0",
+            padding_x="2em",
+            padding_y="1em",
+            bg="white"
+        ),
+        position="fixed",
+        width="100%",
+        top="0px",
+        z_index="500",
+    )
 
 def index():
-    return pc.center(
+    return pc.box(
+        navbar(),
+        pc.center(
         pc.vstack(
-            pc.heading("Welcome to Ppynecone!", font_size="2em"),
+            pc.heading("Welcome to Pynecone!", font_size="2em"),
             pc.box("Get started by editing ", pc.code(filename, font_size="1em")),
             pc.link(
                 "Check out our docs!",
@@ -32,6 +49,7 @@ def index():
             font_size="2em",
         ),
         padding_top="10%",
+    )
     )
 
 
